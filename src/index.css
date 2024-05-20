@@ -10,3 +10,26 @@ html, body, #root{
 a {
     color: blue;
 }
+
+form{
+    width: 300px;
+    text-align: left;
+    margin: 20px auto;
+    padding: 20px;
+    box-shadow: 10px 10px 10px;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+form > input, form > button{
+    width: 100%;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.error{
+    color: blue;
+    position: absolute;
+    margin-left: 50px;
+    font-weight: bold;
+}
