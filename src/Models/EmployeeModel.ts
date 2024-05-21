@@ -1,3 +1,5 @@
+import { RegisterOptions } from "react-hook-form";
+
 export class EmployeeModel {
 	public id: number;
     public firstName: string;
@@ -7,4 +9,9 @@ export class EmployeeModel {
     public city: string;
     public birthDate: string;
     public imageUrl: string;
+    public image: File;
+
+    public static Validation: RegisterOptions = {}
 }
+
+

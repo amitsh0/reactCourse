@@ -10,6 +10,8 @@ import { EmployeeList } from "../../EmployeeArea/EmployeeList/EmployeeList";
 import { AddProduct } from "../../ProductArea/AddProduct/AddProduct";
 import { EditProduct } from "../../ProductArea/EditProduct/EditProduct";
 import { Register } from "../../UserArea/Register/Register";
+import { Login } from "../../UserArea/Login/Login";
+import { AddEmployee } from "../../EmployeeArea/AddEmployee/AddEmployee";
 
 export function Routing(): JSX.Element {
     
@@ -22,6 +24,7 @@ export function Routing(): JSX.Element {
 			<Routes>
                 <Route path="/home" element={<Home/>}/>
                 <Route path="/register" element={<Register/>}/>
+                <Route path="/login" element={<Login/>}/>
                 <Route path="/products" element={<ProductList/>}/>
                 <Route path="/products/details/:prodId" element={<ProductDetails/>}/>
                 <Route path="/products/new" element={<AddProduct/>}/>
@@ -29,7 +32,8 @@ export function Routing(): JSX.Element {
                 <Route path="/employees" element={<EmployeeList/>}/>
                 <Route path="/about" element={suspenseAbout}/>
                 <Route path="/" element={<Navigate to="/home"/>}/>
-                <Route path = "*" element={<PageNotFound/>}/>
+                <Route path="*" element={<PageNotFound/>}/>
+                <Route path="/employees/new" element={<AddEmployee/>}/>
             </Routes>
         </div>
     );

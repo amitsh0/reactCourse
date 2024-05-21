@@ -2,6 +2,7 @@ import { configureStore, createSlice } from "@reduxjs/toolkit";
 import { ProductModel } from "../Models/ProductModel";
 import { addProduct, deleteProduct, initProducts, loginUser, logoutUser, registerUser, updateProduct } from "./reducers";
 import { UserModel } from "../Models/UserModel";
+import { logger } from "./middleware";
 
 //application level entire state(all slices)
 export type AppState = {
@@ -29,5 +30,6 @@ export const store = configureStore<AppState>({
     reducer: {
         products: productSlice.reducer,
         user: userSlice.reducer
-    }
+    },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger) as any
 });

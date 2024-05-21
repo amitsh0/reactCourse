@@ -33,3 +33,7 @@ form > input, form > button{
     margin-left: 50px;
     font-weight: bold;
 }
+
+table, th, td {
+    border: 1px solid black;
+}  

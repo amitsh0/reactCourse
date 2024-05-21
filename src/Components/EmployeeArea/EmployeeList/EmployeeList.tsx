@@ -17,6 +17,18 @@ export function EmployeeList(): JSX.Element {
     return (
         <div className="EmployeeList">
 			<table>
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Title</th>
+                        <th>Country</th>
+                        <th>City</th>
+                        <th>BirthDate</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+                <tbody>
                 {employees.map(e => 
                     <tr key ={e.id}> 
                         <th>{e.firstName}</th> 
@@ -28,6 +40,7 @@ export function EmployeeList(): JSX.Element {
                         <th><img src={e.imageUrl}/></th> 
                     </tr>
                 )}
+                </tbody>
             </table>
                 
         </div>
