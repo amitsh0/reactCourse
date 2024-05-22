@@ -4,11 +4,14 @@ import "./ProductList.css";
 import { ProductModel } from "../../../Models/ProductModel";
 import { ProductCard } from "../ProductCard/ProductCard";
 import { notify } from "../../../Utils/notify";
+import { useTitle } from "../../../Utils/UseTitle";
 
 export function ProductList(): JSX.Element {
     
     const [products, setProducts] = useState<ProductModel[]>([]);
     
+    useTitle("Northwind products");
+
     useEffect(()=>{
         productService.getAllProducts()
         .then(dbProducts => setProducts(dbProducts))

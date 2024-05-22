@@ -4,9 +4,12 @@ import { ProductModel } from "../../../Models/ProductModel";
 import { productService } from "../../../Services/ProductService";
 import { notify } from "../../../Utils/notify";
 import { useNavigate } from "react-router-dom";
+import { useTitle } from "../../../Utils/UseTitle";
 
 export function AddProduct(): JSX.Element {
     
+    useTitle("Northwind add product");
+
     const {register, handleSubmit, formState }= useForm<ProductModel>();
 
     const navigate = useNavigate();

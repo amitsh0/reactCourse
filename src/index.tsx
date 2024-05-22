@@ -7,9 +7,11 @@ import { Provider } from 'react-redux';
 import { store } from './Redux/store';
 import { interceptor } from './Utils/interceptor';
 import { MiniThemeContext, siteMiniTheme } from './Utils/MiniTheme';
+import { ThemeProvider } from '@mui/material';
+import { muiTheme } from './Utils/MuiTheme';
 
 //create axios interceptor
-interceptor.createInterceptor();
+//interceptor.createInterceptor(); // the log in wont work, we did it for the gpt
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -17,9 +19,11 @@ const root = ReactDOM.createRoot(
 root.render(
   <BrowserRouter>
     <Provider store = {store}>
-        <MiniThemeContext.Provider value = {siteMiniTheme}>
-            <Layout/>
-        </MiniThemeContext.Provider>
+        <ThemeProvider theme={muiTheme}>
+            <MiniThemeContext.Provider value = {siteMiniTheme}>
+                <Layout/>
+            </MiniThemeContext.Provider>
+        </ThemeProvider>
     </Provider> 
   </BrowserRouter>
 );

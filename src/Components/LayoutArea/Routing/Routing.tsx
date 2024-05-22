@@ -12,6 +12,7 @@ import { EditProduct } from "../../ProductArea/EditProduct/EditProduct";
 import { Register } from "../../UserArea/Register/Register";
 import { Login } from "../../UserArea/Login/Login";
 import { AddEmployee } from "../../EmployeeArea/AddEmployee/AddEmployee";
+import { ContactUs } from "../../AboutArea/ContactUs/ContactUs";
 
 export function Routing(): JSX.Element {
     
@@ -32,6 +33,7 @@ export function Routing(): JSX.Element {
                 <Route path="/employees" element={<EmployeeList/>}/>
                 <Route path="/about" element={suspenseAbout}/>
                 <Route path="/" element={<Navigate to="/home"/>}/>
+                <Route path="/contact-us" element={<ContactUs/>}/>
                 <Route path="*" element={<PageNotFound/>}/>
                 <Route path="/employees/new" element={<AddEmployee/>}/>
             </Routes>
